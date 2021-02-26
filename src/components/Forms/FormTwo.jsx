@@ -6,9 +6,15 @@ function FormTwo() {
   const history = useHistory();
 
   const handleNext = () => {
-    // TODO: save selection to redux
+    // Validate selection:
+    let selectedValue = document.getElementById("content").value;
+    if (selectedValue === "") {
+      alert('Number must be selected!')
+    } else {
+      history.push('/form3');
+    }
 
-    history.push('/form3');
+    // TODO: save selection to redux
   }
 
   return (
@@ -16,7 +22,7 @@ function FormTwo() {
       <FormCompTwo />
       <label for="content">How well are you understanding the content?</label>
       <select name="content" id="content">
-        <option value="blank"></option>
+        <option value=""></option>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
