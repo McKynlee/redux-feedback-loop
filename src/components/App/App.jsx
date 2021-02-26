@@ -4,10 +4,10 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
 
 // Custom components:
-import FormOne from '../FormOne/FormOne';
-import FormTwo from '../FormTwo/FormTwo';
-import FormThree from '../FormThree/FormThree';
-import FormFour from '../FormFour/FormFour';
+import FormOne from '../Forms/FormOne';
+import FormTwo from '../Forms/FormTwo';
+import FormThree from '../Forms/FormThree';
+import FormFour from '../Forms/FormFour';
 import ReviewPage from '../ReviewPage/ReviewPage';
 import SubmissionSuccess from '../SubmissionSuccess/SubmissionSuccess';
 
