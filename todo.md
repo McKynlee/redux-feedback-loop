@@ -8,19 +8,19 @@
 -[x] Router + Routes for each component (no Link to)
 
 ## Form One
-- Q: How are you feeling today?
-- number / dropdown input 1-5, required
-- alert user if input not filled with number
-- NEXT button
-- --> onClick takes you to Form Two (IF input correct) AND
+-[x] Q: How are you feeling today?
+-[x] number / dropdown input 1-5, required
+-[x] alert user if input not filled with number
+-[x] NEXT button
+-[x] --> onClick takes you to Form Two (IF input correct) AND
 - sends input to Redux Store
 
 ## Form Two
 -[x] Q: How well are you understanding the content?
 -[x] number / dropdown input 1-5, required
-- alert user if input not filled with number
-- NEXT button
-- --> onClick takes you to Form Three (IF input correct) AND
+-[x] alert user if input not filled with number
+-[x] NEXT button
+-[x] --> onClick takes you to Form Three (IF input correct) AND
 - sends input to Redux Store
 
 ## Form Three
@@ -28,7 +28,7 @@
 -[x] number / dropdown input 1-5, required
 - alert user if input not filled with number
 -[x] NEXT button
-- --> onClick takes you to Form Four (IF input correct) AND
+-[x] --> onClick takes you to Form Four (IF input correct) AND
 - sends input to Redux Store
 
 ## Form Four
