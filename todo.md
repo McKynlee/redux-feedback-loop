@@ -40,15 +40,16 @@
 
 ## Review Page
 - Display current feedback values (dispatch from store)
-- submit button
+-[x] submit button
 - onClick:
 - POSTS feedback to server + db
 - dispatches data to admin page
-- Routes to Success Page
+-[x] Routes to Success Page
 
 ## Submission Success Page
 - THANKS!
-- Button to leave new Feedback --> useHistory to Form One AND reset all data
+- Button to leave new Feedback --> useHistory to /FormOne 
+- AND reset all data
 
 
 # STRETCH GOALS:
