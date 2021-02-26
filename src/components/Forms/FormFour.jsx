@@ -1,4 +1,5 @@
 import { useHistory } from 'react-router-dom';
+import FormCompFour from '../FormCompletion/FormComp4';
 
 // Component to display upon hitting NEXT in FormThree:
 function FormFour() {
@@ -12,25 +13,8 @@ function FormFour() {
 
   return (
     <div>
-      <table className="form-completion-marker">
-        <thead>
-          <tr>
-            <th>
-              3 of 4
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td className="form-green-bg"></td>
-            <td className="form-green-bg"></td>
-            <td className="form-green-bg"></td>
-            <td className="form-green-bg"></td>
-          </tr>
-        </tbody>
-      </table>
+      <FormCompFour />
       <label for="comments">Any comments you want to leave?</label>
-
       <input type="text" />
       <button onClick={handleNext}>REVIEW</button>
     </div>

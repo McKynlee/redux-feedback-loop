@@ -16,26 +16,26 @@
 - sends input to Redux Store
 
 ## Form Two
-- Q: How well are you understanding the content?
-- number / dropdown input 1-5, required
+-[x] Q: How well are you understanding the content?
+-[x] number / dropdown input 1-5, required
 - alert user if input not filled with number
 - NEXT button
 - --> onClick takes you to Form Three (IF input correct) AND
 - sends input to Redux Store
 
 ## Form Three
-- Q: How well are you being supported?
-- number / dropdown input 1-5, required
+-[x] Q: How well are you being supported?
+-[x] number / dropdown input 1-5, required
 - alert user if input not filled with number
-- NEXT button
+-[x] NEXT button
 - --> onClick takes you to Form Four (IF input correct) AND
 - sends input to Redux Store
 
 ## Form Four
-- Q: Any comments you want to leave?
-- text input, ok to be empty
-- NEXT button
-- --> onClick takes you to Review Page AND
+-[x] Q: Any comments you want to leave?
+-[x] text input, ok to be empty
+-[x] NEXT button
+-[x] --> onClick takes you to Review Page AND
 - sends input to Redux Store
 
 ## Review Page

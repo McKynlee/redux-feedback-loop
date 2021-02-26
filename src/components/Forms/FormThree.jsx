@@ -1,4 +1,5 @@
 import { useHistory } from 'react-router-dom';
+import FormCompThree from '../FormCompletion/FormComp3';
 
 // Component to display upon hitting NEXT in FormTwo:
 function FormThree() {
@@ -12,29 +13,8 @@ function FormThree() {
 
   return (
     <div>
-      <table className="form-completion-marker">
-        <thead>
-          <tr>
-            <th>
-            </th>
-            <th>
-              3 of 4
-        </th>
-            <th></th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td className="form-green-bg"></td>
-            <td className="form-green-bg"></td>
-            <td className="form-green-bg"></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
+      <FormCompThree />
       <label for="supported">How well are you being supported?</label>
-
       <select name="supported" id="supported">
         <option value="blank"></option>
         <option value="1">1</option>
