@@ -15,8 +15,6 @@ function FormOne() {
       history.push('/form2');
     }
     // TODO: save selection to redux
-
-
   }
 
   return (

@@ -41,7 +41,10 @@
 ## Review Page
 - Display current feedback values (dispatch from store)
 - submit button
-- onClick POSTS feedback to server + db/ dispatches to admin page
+- onClick:
+- POSTS feedback to server + db
+- dispatches data to admin page
+- Routes to Success Page
 
 ## Submission Success Page
 - THANKS!

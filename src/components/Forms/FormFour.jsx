@@ -14,7 +14,7 @@ function FormFour() {
   return (
     <div>
       <FormCompFour />
-      <label for="comments">Any comments you want to leave?</label>
+      <label htmlFor="comments">Any comments you want to leave?</label>
       <input type="text" />
       <button onClick={handleNext}>REVIEW</button>
     </div>

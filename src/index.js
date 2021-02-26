@@ -9,10 +9,13 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
+const formOneReducer = (state = [], action) => {
+  return state;
+}
 
 const store = createStore(
   combineReducers({
-
+    formOneReducer,
   }),
   applyMiddleware(logger)
 )
