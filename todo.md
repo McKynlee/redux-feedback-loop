@@ -1,11 +1,11 @@
 # Setup
-- install/import redux/react-redux/redux-logger
-- create DB
+-[x] install/import redux/react-redux/redux-logger
+-[x] create DB
 
 # Components
 
 ## App
-- Router + Routes for each component (no Link to)
+-[x] Router + Routes for each component (no Link to)
 
 ## Form One
 - Q: How are you feeling today?
