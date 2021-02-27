@@ -9,17 +9,20 @@ function FormFour() {
   const dispatch = useDispatch();
 
   // Create local state to handle input comment
-  const [commentInput, setCommentInput] = useState('test comment');
+  const [commentInput, setCommentInput] = useState('');
 
   // When 'Review' button clicked, 
   // save input and navigate to next page
   const handleNext = () => {
-    // Save selection to redux store:
+    // Save selection to redux store (OK if left blank):
     dispatch({
       type: 'SET_COMMENT_FEEDBACK',
       payload: commentInput,
     })
     history.push('/review');
+
+    // Clear input field
+    setCommentInput('');
   }
 
   return (

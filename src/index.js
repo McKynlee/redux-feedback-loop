@@ -10,10 +10,10 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
 let currentInput = {
-  feeling: 1,
-  understanding: 1,
-  support: 1,
-  comments: 'TGIF'
+  feeling: 0,
+  understanding: 0,
+  support: 0,
+  comments: ''
 }
 // Capture current inputs each time user clicks the next page.
 // This will be added to feedbackHistoryReducer upon overall submit
@@ -35,7 +35,7 @@ const currentFeedbackReducer = (state = currentInput, action) => {
       return { ...state, support: currentFeedbackInput };
       break;
     case 'SET_COMMENT_FEEDBACK':
-      return { ...state, comment: currentCommentInput };
+      return { ...state, comments: currentCommentInput };
   }
   return state;
 } // end currentFeedbackReducer

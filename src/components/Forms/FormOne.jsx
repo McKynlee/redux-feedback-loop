@@ -9,10 +9,11 @@ function FormOne() {
   const history = useHistory();
   const dispatch = useDispatch();
 
+  // When NEXT button clicked, 
+  // save input and navigate to next page
   const handleNext = () => {
-
+    // Capture value selected by user in dropdown:
     let selectedValue = document.getElementById("feeling").value;
-    console.log('selectedValue FormOne', selectedValue);
 
     // Verify selection is not blank:
     if (selectedValue === "") {

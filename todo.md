@@ -29,14 +29,14 @@
 -[x] alert user if input not filled with number
 -[x] NEXT button
 -[x] --> onClick takes you to Form Four (IF input correct) AND
-- sends input to Redux Store
+-[x] sends input to Redux Store
 
 ## Form Four
 -[x] Q: Any comments you want to leave?
 -[x] text input, ok to be empty
 -[x] NEXT button
 -[x] --> onClick takes you to Review Page AND
-- sends input to Redux Store
+-[x] sends input to Redux Store
 
 ## Review Page
 - Display current feedback values (dispatch from store)
@@ -47,9 +47,9 @@
 -[x] Routes to Success Page
 
 ## Submission Success Page
-- THANKS!
+-[x] THANKS!
 -[x] Button to leave new Feedback --> useHistory to /FormOne 
-- AND reset all data
+-[x] AND reset all data
 
 
 # STRETCH GOALS:
@@ -62,8 +62,8 @@
 - Material UI (cards, snackbars, buttons, nav bar, icons, theme)
 
 ## Admin Page
-- Display all historical feedback
-- Order by most recent feedback
+- Display all historical feedback (GET route written)
+- Order by most recent feedback (ORDER BY "time" in sql)
 - Ability to DELETE any feedback
 - Prompt user to confirm prior to deleting (Sweet Alerts) --> delete from db
 - Ability to flag a feedback entry for review
