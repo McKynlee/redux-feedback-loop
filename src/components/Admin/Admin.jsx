@@ -41,7 +41,7 @@ function Admin() {
   return (
     <div>
       <h2>Admin page</h2>
-      <table className="admin-table">
+      <table className="admin-table admin-table-container">
         <thead>
           <tr className="admin-table">
             <th className="admin-table">Feeling</th>
