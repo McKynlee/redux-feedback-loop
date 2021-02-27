@@ -24,7 +24,7 @@ function FormThree() {
       {/* Show how many / 4 questions complete: */}
       <FormCompThree />
 
-      <label for="supported">How well are you being supported?</label>
+      <label htmlFor="supported">How well are you being supported?</label>
       <select name="supported" id="supported">
         <option value=""></option>
         <option value="1">1</option>
