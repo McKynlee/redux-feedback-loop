@@ -66,8 +66,8 @@
 -[x] Order by most recent feedback (ORDER BY "time" in sql)
 -[x] Ability to DELETE any feedback
 -[x] Prompt user to confirm prior to deleting (Sweet Alerts) --> delete from db
-- Ability to flag a feedback entry for review:
-- build out handleFlagClick to update db and re-render page
--[x] write TRUE case conditional rendering
+-[x] Ability to flag a feedback entry for review:
+-[x] build out handleFlagClick to update db and re-render page
+-[x] write TRUE/FALSE case conditional rendering
 
 ## Heroku
