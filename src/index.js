@@ -18,11 +18,13 @@ let currentInput = {
 // Capture current inputs each time user clicks the next page.
 // This will be added to feedbackHistoryReducer upon overall submit
 const currentFeedbackReducer = (state = currentInput, action) => {
-  let currentFeedbackInput = action.payload;
+  let currentFeedbackInput = Number(action.payload);
 
   switch (action.type) {
     case 'SET_FEELING_FEEDBACK':
       return { ...state, feeling: currentFeedbackInput }
+    case 'SET_CONTENT_FEEDBACK':
+      return { ...state, understanding: currentFeedbackInput }
   }
   return state;
 } // end currentFeedbackReducer

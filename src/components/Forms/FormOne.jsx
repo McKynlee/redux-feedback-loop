@@ -1,5 +1,5 @@
 import { useHistory } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import './Form.css';
 import FormCompOne from '../FormCompletion/FormComp1';
 
@@ -8,13 +8,6 @@ import FormCompOne from '../FormCompletion/FormComp1';
 function FormOne() {
   const history = useHistory();
   const dispatch = useDispatch();
-
-  // Bring in object structure to house feedback inputs:
-  const formOneFeedback = useSelector(store => {
-    return store.currentFeedbackReducer;
-  })
-
-  console.log(formOneFeedback);
 
   const handleNext = () => {
 
