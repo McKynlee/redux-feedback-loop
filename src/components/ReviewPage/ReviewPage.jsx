@@ -36,7 +36,7 @@ function ReviewPage() {
 
   return (
     <div>
-      <h2>ReviewPage</h2>
+      <h2>Review Your Answers:</h2>
       {/* // Display data captured from user's input here: */}
       <section className="review-feedback" >
         <p>How you're feeling: {currentUserFeedback.feeling}</p>

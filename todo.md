@@ -39,7 +39,7 @@
 -[x] sends input to Redux Store
 
 ## Review Page
-- Display current feedback values (dispatch from store)
+-[x] Display current feedback values (dispatch from store)
 -[x] submit button
 -[x] onClick:
 -[x] POSTS feedback to server + db
@@ -49,7 +49,7 @@
 ## Submission Success Page
 -[x] THANKS!
 -[x] Button to leave new Feedback --> useHistory to /FormOne 
--[x] AND reset all data
+-[] AND reset all data
 
 
 # STRETCH GOALS:
