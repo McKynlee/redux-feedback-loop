@@ -22,9 +22,14 @@ const currentFeedbackReducer = (state = currentInput, action) => {
 
   switch (action.type) {
     case 'SET_FEELING_FEEDBACK':
-      return { ...state, feeling: currentFeedbackInput }
-    case 'SET_CONTENT_FEEDBACK':
-      return { ...state, understanding: currentFeedbackInput }
+      return { ...state, feeling: currentFeedbackInput };
+      break;
+    case 'SET_UNDERSTANDING_FEEDBACK':
+      return { ...state, understanding: currentFeedbackInput };
+      break;
+    case 'SET_SUPPORT_FEEDBACK':
+      return { ...state, support: currentFeedbackInput };
+      break;
   }
   return state;
 } // end currentFeedbackReducer

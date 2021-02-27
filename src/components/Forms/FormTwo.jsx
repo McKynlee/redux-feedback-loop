@@ -8,24 +8,21 @@ function FormTwo() {
   const dispatch = useDispatch();
 
   const handleNext = () => {
+    // Capture value selected by user in dropdown:
     let selectedValue = document.getElementById("content").value;
-    console.log('selectedValue FormOne', selectedValue);
 
-    // Verify selection is not blank:
+    // Verify selection is not blank and capture selected value:
     if (selectedValue === "") {
       alert('Number must be selected!')
     } else {
       // When selection not blank, save it to currentFeedbackReducer
       dispatch({
-        type: 'SET_CONTENT_FEEDBACK',
+        type: 'SET_UNDERSTANDING_FEEDBACK',
         payload: selectedValue,
       })
       history.push('/form3');
     }
   }
-
-  // TODO: save selection to redux
-
 
   return (
     <div>

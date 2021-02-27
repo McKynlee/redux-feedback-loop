@@ -1,22 +1,27 @@
 import { useHistory } from 'react-router-dom';
 import FormCompThree from '../FormCompletion/FormComp3';
+import { useDispatch } from 'react-redux';
 
 // Component to display upon hitting NEXT in FormTwo:
 function FormThree() {
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const handleNext = () => {
-    // Validate selection:
+    // Capture value selected by user in dropdown:
     let selectedValue = document.getElementById("supported").value;
+
+    // Verify selection is not blank:
     if (selectedValue === "") {
       alert('Number must be selected!')
     } else {
+      // When selection not blank, save it to current feedback:
+      dispatch({
+        type: 'SET_SUPPORT_FEEDBACK',
+        payload: selectedValue,
+      })
       history.push('/form4');
     }
-
-    // TODO: save selection to redux
-
-
   }
 
   return (

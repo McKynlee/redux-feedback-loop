@@ -13,7 +13,7 @@
 -[x] alert user if input not filled with number
 -[x] NEXT button
 -[x] --> onClick takes you to Form Two (IF input correct) AND
-- sends input to Redux Store
+-[x] sends input to Redux Store
 
 ## Form Two
 -[x] Q: How well are you understanding the content?
@@ -21,12 +21,12 @@
 -[x] alert user if input not filled with number
 -[x] NEXT button
 -[x] --> onClick takes you to Form Three (IF input correct) AND
-- sends input to Redux Store
+-[x] sends input to Redux Store
 
 ## Form Three
 -[x] Q: How well are you being supported?
 -[x] number / dropdown input 1-5, required
-- alert user if input not filled with number
+-[x] alert user if input not filled with number
 -[x] NEXT button
 -[x] --> onClick takes you to Form Four (IF input correct) AND
 - sends input to Redux Store
