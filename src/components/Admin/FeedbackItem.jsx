@@ -1,9 +1,37 @@
 import axios from "axios";
 import swal from 'sweetalert';
+import { useEffect } from 'react';
 
 
 function FeedbackItem({ userFeedbackRow,
   fetchHistoricalFeedback }) {
+  // Capture boolean value from db "flagged" column
+  // to use in conditional rendering:
+  let flaggedStatus = userFeedbackRow.flagged;
+  console.log('flaggedStatus:', userFeedbackRow.comments, flaggedStatus);
+
+  // Create variable to carry conditional JSX generated
+  // from handleFlagForReview down to return(...JSX):
+  let renderingForFlaggedStatus;
+
+  // on page load, determine how to render flagged table data:
+  useEffect(() => {
+    setFlagRendering();
+  }, []);
+
+  // Control how the table data will be rendered for 'Flag for review'
+  // so that when flaggedStatus is true, it will show that the admin has 
+  // flagged that feedback for review
+  const setFlagRendering = () => {
+    switch (flaggedStatus) {
+      case false:
+        renderingForFlaggedStatus = 'FALSE!';
+        break;
+      case true:
+        renderingForFlaggedStatus = 'TRUE!'
+        break;
+    }
+  } // end handleFlagForReview
 
   // Grab id for feedback row and delete when button clicked:
   const handleDelete = (feedbackToDeleteId) => {
@@ -46,7 +74,7 @@ function FeedbackItem({ userFeedbackRow,
       <td className="admin-table">{userFeedbackRow.understanding}</td>
       <td className="admin-table">{userFeedbackRow.support}</td>
       <td className="admin-table">{userFeedbackRow.comments}</td>
-      <td className="admin-table">Flag icon</td>
+      <td className="admin-table">{renderingForFlaggedStatus}</td>
       <td className="admin-table">
         <button onClick={() => handleDelete(userFeedbackRow.id)}>DELETE</button>
       </td>

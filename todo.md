@@ -65,7 +65,7 @@
 -[x] Dispatch data from GET to set Historical feedback reducer
 -[x] Order by most recent feedback (ORDER BY "time" in sql)
 -[x] Ability to DELETE any feedback
-- Prompt user to confirm prior to deleting (Sweet Alerts) --> delete from db
+-[x] Prompt user to confirm prior to deleting (Sweet Alerts) --> delete from db
 - Ability to flag a feedback entry for review
 
 ## Heroku
