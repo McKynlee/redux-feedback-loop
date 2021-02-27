@@ -1,3 +1,5 @@
+// Track how many q's out of 4 have been answered
+// to display on each corresponding form page:
 function FormCompOne() {
   return (
     <table className="form-completion-marker">
@@ -22,6 +24,6 @@ function FormCompOne() {
       </tbody>
     </table>
   )
-}
+} // end FormCompOne
 
 export default FormCompOne;

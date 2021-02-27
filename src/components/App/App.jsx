@@ -10,6 +10,7 @@ import FormThree from '../Forms/FormThree';
 import FormFour from '../Forms/FormFour';
 import ReviewPage from '../ReviewPage/ReviewPage';
 import SubmissionSuccess from '../SubmissionSuccess/SubmissionSuccess';
+import Admin from '../Admin/Admin';
 
 function App() {
 
@@ -38,9 +39,12 @@ function App() {
         <Route exact path="/success">
           <SubmissionSuccess />
         </Route>
+        <Route exact path="/admin">
+          <Admin />
+        </Route>
       </Router>
     </div>
   );
-}
+} // end App
 
 export default App;

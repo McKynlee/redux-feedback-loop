@@ -24,13 +24,12 @@ function FormTwo() {
       })
       history.push('/form3');
     }
-  }
+  } // end handleNext
 
   return (
     <div>
       {/* Show how many / 4 questions complete: */}
       <FormCompTwo />
-
       <label htmlFor="content">How well are you understanding the content?</label>
       <select name="content" id="content">
         <option value=""></option>

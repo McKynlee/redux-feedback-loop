@@ -65,6 +65,9 @@ const currentFeedbackReducer = (state = templateInput, action) => {
 // Have each individual feedback package from currentFeedbackReducer
 // added to this array to have all feedback saved together.
 const feedbackHistoryReducer = (state = [], action) => {
+  if (action.type === 'SET_HISTORICAL_FEEDBACK') {
+    return action.payload;
+  }
   return state;
 } // end feedbackHistoryReducer
 

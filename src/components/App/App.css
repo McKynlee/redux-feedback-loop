@@ -21,3 +21,19 @@
 h4 {
   font-style: italic;
 }
+
+.admin-table-container {
+width: 75%;
+margin: auto;
+}
+
+.admin-table {
+  border: 0.15em solid gray;
+  border-collapse: collapse;
+  padding: 0.5em;
+}
+
+.admin-flagged {
+  background-color: maroon;
+  color: wheat;
+}
