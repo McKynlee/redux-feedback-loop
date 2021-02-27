@@ -18,11 +18,15 @@ function FeedbackItem({ userFeedbackRow,
   switch (flaggedStatus) {
     case false:
       renderingForFlaggedStatus =
-        <button>Flag</button>;
+        <button onClick={() => handleFlagClick(userFeedbackRow.id)}>Flag</button>;
       break;
     case true:
       renderingForFlaggedStatus = 'TRUE!';
       break;
+  }
+
+  const handleFlagClick = (userIdToFlag) => {
+    console.log('handleFlagClick');
   }
 
   // Grab id for feedback row and delete when button clicked:
