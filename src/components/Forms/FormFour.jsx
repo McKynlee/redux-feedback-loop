@@ -23,7 +23,7 @@ function FormFour() {
 
     // Clear input field
     setCommentInput('');
-  }
+  } // end handleNext
 
   return (
     <div>

@@ -43,13 +43,12 @@
 -[x] submit button
 -[x] onClick:
 -[x] POSTS feedback to server + db
-- dispatches data to admin page (or GET from db on admin --> dispatch to set Historical?)
 -[x] Routes to Success Page
 
 ## Submission Success Page
 -[x] THANKS!
 -[x] Button to leave new Feedback --> useHistory to /FormOne 
--[] AND reset all data
+-[x] AND reset all data
 
 
 # STRETCH GOALS:
@@ -62,7 +61,8 @@
 - Material UI (cards, snackbars, buttons, nav bar, icons, theme)
 
 ## Admin Page
-- Display all historical feedback (GET route written)
+- Display all historical feedback (GET route written) 
+- Dispatch data from GET to set Historical feedback reducer
 - Order by most recent feedback (ORDER BY "time" in sql)
 - Ability to DELETE any feedback
 - Prompt user to confirm prior to deleting (Sweet Alerts) --> delete from db

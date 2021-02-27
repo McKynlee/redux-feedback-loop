@@ -26,13 +26,12 @@ function FormOne() {
       })
       history.push('/form2');
     }
-  }
+  } // end handleNext
 
   return (
     <div>
       {/* Show how many / 4 questions complete: */}
       <FormCompOne />
-
       <label htmlFor="feeling">How are you feeling today?</label>
       <select name="feeling" id="feeling" required>
         <option value="">Choose One</option>
