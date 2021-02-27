@@ -5,7 +5,7 @@ function SubmissionSuccess() {
 
   return (
     <div>
-      <h2>Submission Success!</h2>
+      <h2>Thank you for your feedback!</h2>
       <Link to="/">Leave New Feedback</Link>
     </div>
   )

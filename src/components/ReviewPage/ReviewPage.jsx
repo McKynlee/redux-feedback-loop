@@ -6,11 +6,14 @@ import axios from 'axios';
 function ReviewPage() {
   const history = useHistory();
 
-  // Bring in entire set of saved inputs for this user:
+  // Bring in entire set of saved inputs for this user,
+  // so we can send it to server --> save in db:
   const currentUserFeedback = useSelector(store => {
     return store.currentFeedbackReducer;
   })
 
+  // on submit, post current set of feedback to server
+  // and reroute to '/success':
   const submitToSuccess = () => {
     console.log('submitToSuccess');
 
@@ -34,8 +37,14 @@ function ReviewPage() {
   return (
     <div>
       <h2>ReviewPage</h2>
-      {/* // Display data captured from input here: useSelect from store */}
-      <button onClick={submitToSuccess}>SUBMIT</button>
+      {/* // Display data captured from user's input here: */}
+      <section className="review-feedback" >
+        <p>How you're feeling: {currentUserFeedback.feeling}</p>
+        <p>How you're understanding the material: {currentUserFeedback.understanding}</p>
+        <p>How well you feel supported: {currentUserFeedback.support}</p>
+        <p>Additional comments: {currentUserFeedback.comments}</p>
+        <button onClick={submitToSuccess}>SUBMIT</button>
+      </section>
     </div>
   )
 } // end ReviewPage

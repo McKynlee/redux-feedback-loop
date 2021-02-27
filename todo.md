@@ -43,7 +43,7 @@
 -[x] submit button
 -[x] onClick:
 -[x] POSTS feedback to server + db
-- dispatches data to admin page (or GET from db?)
+- dispatches data to admin page (or GET from db on admin --> dispatch to set Historical?)
 -[x] Routes to Success Page
 
 ## Submission Success Page
