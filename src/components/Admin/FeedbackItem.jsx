@@ -26,7 +26,7 @@ function FeedbackItem({ userFeedbackRow,
   }
 
   const handleFlagClick = (userIdToFlag) => {
-    console.log('handleFlagClick');
+    console.log('handleFlagClick:', userIdToFlag);
   }
 
   // Grab id for feedback row and delete when button clicked:
