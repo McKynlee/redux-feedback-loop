@@ -1,12 +1,33 @@
 import axios from "axios";
+import swal from 'sweetalert';
+
 
 function FeedbackItem({ userFeedbackRow,
   fetchHistoricalFeedback }) {
 
   // Grab id for feedback row and delete when button clicked:
   const handleDelete = (feedbackToDeleteId) => {
-    // console.log('handleDelete:', feedbackToDeleteId);
+    // Alert admin-user to confirm they want to delete
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this feedback!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal("This feedback has been deleted.", {
+            icon: "success",
+          });
+          deleteFeedback(feedbackToDeleteId);
+        } else {
+          swal("Feedback saved!");
+        }
+      });
+  } // end handleDelete
 
+  const deleteFeedback = (feedbackToDeleteId) => {
     // Tell server to delete this feedback:
     axios.delete(`/feedback/${feedbackToDeleteId}`)
       .then(response => {
@@ -16,7 +37,7 @@ function FeedbackItem({ userFeedbackRow,
         console.log('ERROR deleting:', error);
         alert('Error deleting feedback');
       })
-  } // end handleDelete
+  } // end deleteFeedback
 
   // Render row of data for each individual user input:
   return (
