@@ -1,10 +1,17 @@
 import { useHistory } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import './Form.css';
 import FormCompOne from '../FormCompletion/FormComp1';
 
-// Component to display upon page load:
+// "Landing page" Component to display upon page load:
+// This page displays question 1 and sends user answers to redux
 function FormOne() {
   const history = useHistory();
+  const formOneFeedback = useSelector(store => {
+    return store.currentFeedbackReducer;
+  })
+
+  console.log(formOneFeedback);
 
   const handleNext = () => {
     //TODO: verify selection required:
@@ -19,8 +26,10 @@ function FormOne() {
 
   return (
     <div>
+      {/* Show how many / 4 questions complete: */}
       <FormCompOne />
-      <label for="feeling">How are you feeling today?</label>
+
+      <label htmlFor="feeling">How are you feeling today?</label>
       <select name="feeling" id="feeling" required>
         <option value="">Choose One</option>
         <option value="1">1</option>

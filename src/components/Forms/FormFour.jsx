@@ -13,7 +13,9 @@ function FormFour() {
 
   return (
     <div>
+      {/* Show how many / 4 questions complete: */}
       <FormCompFour />
+
       <label htmlFor="comments">Any comments you want to leave?</label>
       <input type="text" />
       <button onClick={handleNext}>REVIEW</button>

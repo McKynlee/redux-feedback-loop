@@ -19,7 +19,9 @@ function FormTwo() {
 
   return (
     <div>
+      {/* Show how many / 4 questions complete: */}
       <FormCompTwo />
+
       <label for="content">How well are you understanding the content?</label>
       <select name="content" id="content">
         <option value=""></option>

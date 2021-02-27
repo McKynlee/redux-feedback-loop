@@ -9,13 +9,28 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
-const formOneReducer = (state = [], action) => {
-  return state;
+let currentInput = {
+  feeling: 1,
+  understanding: 1,
+  support: 1,
+  comments: 'TGIF'
 }
+// Capture current inputs each time user clicks the next page.
+// This will be added to feedbackHistoryReducer upon overall submit
+const currentFeedbackReducer = (state = currentInput, action) => {
+  return state;
+} // end currentFeedbackReducer
+
+// Have each individual feedback set from currentFeedbackReducer
+// added to this array to have all feedback saved together.
+const feedbackHistoryReducer = (state = [], action) => {
+  return state;
+} // end feedbackHistoryReducer
 
 const store = createStore(
   combineReducers({
-    formOneReducer,
+    currentFeedbackReducer,
+    feedbackHistoryReducer
   }),
   applyMiddleware(logger)
 )

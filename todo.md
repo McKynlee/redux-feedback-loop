@@ -48,7 +48,7 @@
 
 ## Submission Success Page
 - THANKS!
-- Button to leave new Feedback --> useHistory to /FormOne 
+-[x] Button to leave new Feedback --> useHistory to /FormOne 
 - AND reset all data
 
 
