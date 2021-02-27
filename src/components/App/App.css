@@ -21,3 +21,9 @@
 h4 {
   font-style: italic;
 }
+
+.admin-table {
+  border: 0.15em solid gray;
+  border-collapse: collapse;
+  padding: 0.5em;
+}

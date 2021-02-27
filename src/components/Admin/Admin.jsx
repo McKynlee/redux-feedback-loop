@@ -37,21 +37,19 @@ function Admin() {
       })
   } // end fetchHistoricalFeedback
 
-  console.log('historicalFeeback:', historicalFeedback);
-
   // render historical feedback in a table:
   return (
     <div>
       <h2>Admin page</h2>
-      <table>
+      <table className="admin-table">
         <thead>
-          <tr>
-            <th>Feeling</th>
-            <th>Comprehension</th>
-            <th>Supported</th>
-            <th>Comments</th>
-            <th>Flag for Review</th>
-            <th>Delete</th>
+          <tr className="admin-table">
+            <th className="admin-table">Feeling</th>
+            <th className="admin-table">Comprehension</th>
+            <th className="admin-table">Supported</th>
+            <th className="admin-table">Comments</th>
+            <th className="admin-table">Flag for Review</th>
+            <th className="admin-table">Delete</th>
           </tr>
         </thead>
         <tbody>

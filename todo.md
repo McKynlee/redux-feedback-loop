@@ -61,8 +61,8 @@
 - Material UI (cards, snackbars, buttons, nav bar, icons, theme)
 
 ## Admin Page
-- Display all historical feedback (GET route written) 
-- Dispatch data from GET to set Historical feedback reducer
+-[x] Display all historical feedback (GET route written) 
+-[x] Dispatch data from GET to set Historical feedback reducer
 - Order by most recent feedback (ORDER BY "time" in sql)
 - Ability to DELETE any feedback
 - Prompt user to confirm prior to deleting (Sweet Alerts) --> delete from db
