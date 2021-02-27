@@ -39,6 +39,7 @@ function FeedbackItem({ userFeedbackRow,
         // Re-render here somehow
       }).catch(error => {
         console.log('ERROR updating flag status', error);
+        alert('Error flagging feedback for review')
       })
   } // end handleFlagClick
 
