@@ -32,3 +32,8 @@ margin: auto;
   border-collapse: collapse;
   padding: 0.5em;
 }
+
+.admin-flagged {
+  background-color: maroon;
+  color: wheat;
+}

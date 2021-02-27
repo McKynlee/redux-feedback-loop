@@ -8,9 +8,10 @@ function FeedbackItem({ userFeedbackRow,
   let flaggedStatus = userFeedbackRow.flagged;
   // console.log('flaggedStatus:', userFeedbackRow.comments, flaggedStatus);
 
-  // Create variable to carry conditional JSX generated
+  // Create variables to carry conditional JSX generated
   // from handleFlagForReview down to return(...JSX):
   let renderingForFlaggedStatus;
+  let cssForFlaggedStatus = "admin-table";
 
   // Control how the table data will be rendered for 'Flag for review'
   // so that when flaggedStatus is true, it will show that the admin has 
@@ -21,13 +22,14 @@ function FeedbackItem({ userFeedbackRow,
         <button onClick={() => handleFlagClick(userFeedbackRow.id)}>Flag</button>;
       break;
     case true:
-      renderingForFlaggedStatus = 'TRUE!';
+      renderingForFlaggedStatus = 'FLAGGED!';
+      cssForFlaggedStatus = "admin-table admin-flagged";
       break;
   }
 
   const handleFlagClick = (userIdToFlag) => {
     console.log('handleFlagClick:', userIdToFlag);
-  }
+  } // end handleFlagClick
 
   // Grab id for feedback row and delete when button clicked:
   const handleDelete = (feedbackToDeleteId) => {
@@ -65,7 +67,7 @@ function FeedbackItem({ userFeedbackRow,
 
   // Render row of data for each individual user input:
   return (
-    <tr className="admin-table">
+    <tr className={cssForFlaggedStatus}>
       <td className="admin-table">{userFeedbackRow.feeling}</td>
       <td className="admin-table">{userFeedbackRow.understanding}</td>
       <td className="admin-table">{userFeedbackRow.support}</td>
