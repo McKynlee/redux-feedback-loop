@@ -36,7 +36,8 @@ function FeedbackItem({ userFeedbackRow,
       { flagged: flaggedStatus })
       .then(response => {
         console.log('PUT response:', response);
-        // Re-render here somehow
+        // Now re-GET db information to update flagged status:
+        fetchHistoricalFeedback();
       }).catch(error => {
         console.log('ERROR updating flag status', error);
         alert('Error flagging feedback for review')
