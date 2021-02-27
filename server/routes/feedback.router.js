@@ -45,6 +45,21 @@ router.post('/', (req, res) => {
     })
 });
 
+router.put('/:id', (req, res) => {
+  const flaggedStatusToChangeId = req.params.id;
+  const flaggedStatusToChange = req.body.flagged;
+
+  console.log('PUT id:', flaggedStatusToChangeId, 'req.body:', req.body);
+
+  let sqlScript;
+
+  // if (flaggedStatusToChange === 'TRUE') {
+  //   sqlScript = `
+  //   UPDATE "feedback"
+  //   SET "flagged" = `
+  // }
+}) // end PUT
+
 // When admin clicks on delete button of f
 // feedback row, delete that row by its id:
 router.delete('/:id', (req, res) => {

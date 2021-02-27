@@ -22,13 +22,24 @@ function FeedbackItem({ userFeedbackRow,
         <button onClick={() => handleFlagClick(userFeedbackRow.id)}>Flag</button>;
       break;
     case true:
-      renderingForFlaggedStatus = 'FLAGGED!';
+      renderingForFlaggedStatus =
+        <button onClick={() => handleFlagClick(userFeedbackRow.id)}>unflag</button>;
       cssForFlaggedStatus = "admin-table admin-flagged";
       break;
   }
 
   const handleFlagClick = (userIdToFlag) => {
     console.log('handleFlagClick:', userIdToFlag);
+
+    // send id to update to server:
+    axios.put(`/feedback/${userIdToFlag}`,
+      { flagged: flaggedStatus })
+      .then(response => {
+        console.log('PUT response:', response);
+        // Re-render here somehow
+      }).catch(error => {
+        console.log('ERROR updating flag status', error);
+      })
   } // end handleFlagClick
 
   // Grab id for feedback row and delete when button clicked:
