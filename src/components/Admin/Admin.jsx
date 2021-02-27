@@ -57,7 +57,9 @@ function Admin() {
           to display as table data: */}
           {historicalFeedback.map((userFeedbackRow, i) => {
             return <FeedbackItem key={i}
-              userFeedbackRow={userFeedbackRow} />
+              userFeedbackRow={userFeedbackRow}
+              fetchHistoricalFeedback={fetchHistoricalFeedback}
+            />
           })}
         </tbody>
       </table>

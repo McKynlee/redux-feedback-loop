@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
 
   pool.query(sqlScript)
     .then(dbRes => {
-      console.log('dbRes:', dbRes);
+      // console.log('dbRes:', dbRes);
       res.send(dbRes.rows)
     }).catch(error => {
       console.log('ERROR GETting feedback:', error);
@@ -18,6 +18,8 @@ router.get('/', (req, res) => {
     })
 }) // end GET
 
+// When a user submits their feedback,
+// POST it to the database:
 router.post('/', (req, res) => {
   // create variable to hold feedback 
   // data sent from ReviewPage
@@ -42,5 +44,23 @@ router.post('/', (req, res) => {
       res.sendStatus(500);
     })
 });
+
+// When admin clicks on delete button of f
+// feedback row, delete that row by its id:
+router.delete('/:id', (req, res) => {
+  let idToDelete = Number(req.params.id);
+
+  let sqlScript = `DELETE FROM "feedback" 
+  WHERE "id"=$1`
+
+  pool.query(sqlScript, [idToDelete])
+    .then(dbRes => {
+      // console.log('Feedback deleted', dbRes);
+      res.sendStatus(200);
+    }).catch(error => {
+      console.log('Error deleting feedback:', error);
+      res.sendStatus(500);
+    })
+}) // end DELETE
 
 module.exports = router;
