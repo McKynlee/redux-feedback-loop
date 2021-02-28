@@ -8,10 +8,31 @@ This application serves as a form for collecting feedback about an organized lea
 
 Here is a view of the four pages of questions:
 
-![Feedback Question 1](.png)
+![Feedback Question 1](./public/images/FormOne.png)
+
+![Feedback Question 2](./public/images/FormTwo.png)
+
+![Feedback Question 3](./public/images/FormThree.png)
+
+![Feedback Question 4](./public/images/FormFour.png)
+
+Users must make a selection on questions 1-4 in order to move on to next page:
+![Selection verification](./public/images/SelectVerification.png)
+
+This is the review page the user will see when they have completed questions 1-4:
+![Review Page](./public/images/Review.png)
+
+If a user clicks one of the questions on the review page, they will be brought to a page to edit their input:
+![Editing previous answer](./public/images/Edit.png)
+
+Once the user has submitted their answers from the review page, they will be brought to a "Thank you" page where they can opt to leave a new feedback:
+![Editing previous answer](./public/images/Success.png)
+
+The admin is able to see a list of all historical feedback collected, as well as flag any feedback for further review, or delete any feedback (the admin must verify that they intended to delete):
+![Admin view](./public/images/Admin.png)
+![Delete verification](./public/images/DeleteVerification.png)
 
 
-![Galley View with Descriptions](.png)
 
 ## Installation
 
