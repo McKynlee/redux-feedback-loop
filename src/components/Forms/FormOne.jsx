@@ -1,5 +1,6 @@
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { useState } from 'react';
 import './Form.css';
 import FormCompOne from '../FormCompletion/FormComp1';
 import {
@@ -13,30 +14,24 @@ import {
   Card,
   CardHeader,
   CardContent,
-  makeStyles,
 } from '@material-ui/core';
-
-// Create variable to transfer material-ui styles:
-const useStyles = makeStyles({
-  container: {
-    width: 500,
-    margin: auto,
-  }
-}); // end useStyles
 
 // "Landing page" Component to display upon page load:
 // This page displays question 1 and sends user answers to redux
 function FormOne() {
   const history = useHistory();
   const dispatch = useDispatch();
-  const classes = useStyles();
+
+  // Variable to capture value user selects in dropdown:
+  const [selectedValue, setSelectedValue] = useState('');
+
+  const handleChange = (userSelection) => {
+    setSelectedValue(userSelection);
+  }
 
   // When NEXT button clicked, 
   // save input and navigate to next page
   const handleNext = () => {
-    // Capture value selected by user in dropdown:
-    let selectedValue = document.getElementById("feeling").value;
-
     // Verify selection is not blank:
     if (selectedValue === "") {
       alert('Number must be selected!')
@@ -52,7 +47,7 @@ function FormOne() {
 
   return (
     <div>
-      <Card className={classes.container}>
+      <Card className="card-container">
         <CardHeader>
         </CardHeader>
         <CardContent>
@@ -67,7 +62,11 @@ function FormOne() {
           <InputLabel id="type-select-label">
           </InputLabel>
           <Select labelId="type-select-label"
-            name="feeling" id="feeling" required>
+            name="feeling"
+            value={selectedValue}
+            id="feeling"
+            onChange={(event) => handleChange(event.target.value)}
+            required>
             <MenuItem value=""><em>Choose One</em></MenuItem>
             <MenuItem value="1">1</MenuItem>
             <MenuItem value="2">2</MenuItem>
