@@ -54,8 +54,8 @@
 # STRETCH GOALS:
 
 ## Updates from Review Page
-- user can click on data from Review page and edit back in that form page
-- still require number values
+-[x] user can click on data from Review page and edit back in that form page
+-[x] still require number values
 
 ## Styling
 - Material UI (cards, snackbars, buttons, nav bar, icons, theme)
