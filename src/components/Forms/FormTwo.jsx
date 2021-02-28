@@ -2,18 +2,23 @@ import { useHistory } from 'react-router-dom';
 import FormCompTwo from '../FormCompletion/FormComp2';
 import { useDispatch } from 'react-redux';
 import { Button, Box } from '@material-ui/core';
+import { useState } from 'react';
 
 // Component to display upon hitting NEXT in FormOne:
 function FormTwo() {
   const history = useHistory();
   const dispatch = useDispatch();
 
+  // Variable to capture value user selects in dropdown:
+  const [selectedValue, setSelectedValue] = useState('');
+
+  const handleChange = (userSelection) => {
+    setSelectedValue(userSelection);
+  }
+
   // When NEXT button clicked, 
   // save input and navigate to next page
   const handleNext = () => {
-    // Capture value selected by user in dropdown:
-    let selectedValue = document.getElementById("content").value;
-
     // Verify selection is not blank and capture selected value:
     if (selectedValue === "") {
       alert('Number must be selected!')
@@ -32,7 +37,9 @@ function FormTwo() {
       {/* Show how many / 4 questions complete: */}
       <FormCompTwo />
       <label htmlFor="content">How well are you understanding the content?</label>
-      <select name="content" id="content">
+      <select name="content" id="content"
+        onChange={(event) => handleChange(event.target.value)}
+      >
         <option value=""></option>
         <option value="1">1</option>
         <option value="2">2</option>

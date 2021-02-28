@@ -1,6 +1,7 @@
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button, Box } from '@material-ui/core';
+import { useState } from 'react';
 
 // Route to this page when user clicks to edit FormThree answer from ReviewPage:
 // This page re-displays question 3 and sends new user answer to reducer
@@ -9,6 +10,13 @@ import { Button, Box } from '@material-ui/core';
 function EditForm3() {
   const history = useHistory();
   const dispatch = useDispatch();
+
+  // Variable to capture value user selects in dropdown:
+  const [selectedValue, setSelectedValue] = useState('');
+
+  const handleChange = (userSelection) => {
+    setSelectedValue(userSelection);
+  }
 
   // Bring in saved input from FormThree for user to edit:
   const currentUserFeedback = useSelector(store => {
@@ -20,9 +28,6 @@ function EditForm3() {
   // When Return to Review button clicked, 
   // save input and navigate to review page
   const handleReturnToReview = () => {
-    // Capture value selected by user in dropdown:
-    let selectedValue = document.getElementById("supported").value;
-
     // Verify selection is not blank:
     if (selectedValue === "") {
       alert('Number must be selected!')
@@ -41,7 +46,9 @@ function EditForm3() {
       <h3>Edit your answer:</h3>
       <h4>Your original answer was: {originalAnswer}</h4>
       <label htmlFor="supported">How well are you being supported?</label>
-      <select name="supported" id="supported">
+      <select name="supported" id="supported"
+        onChange={(event) => handleChange(event.target.value)}
+      >
         <option value=""></option>
         <option value="1">1</option>
         <option value="2">2</option>
