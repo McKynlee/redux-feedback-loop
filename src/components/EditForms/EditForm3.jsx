@@ -1,5 +1,19 @@
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import {
+  Select,
+  FormControl,
+  MenuItem,
+  InputLabel,
+  Button,
+  Typography,
+  Box,
+  Card,
+  CardActions,
+  CardContent,
+} from '@material-ui/core';
+import { useState } from 'react';
+import swal from 'sweetalert';
 
 // Route to this page when user clicks to edit FormThree answer from ReviewPage:
 // This page re-displays question 3 and sends new user answer to reducer
@@ -8,6 +22,13 @@ import { useDispatch, useSelector } from 'react-redux';
 function EditForm3() {
   const history = useHistory();
   const dispatch = useDispatch();
+
+  // Variable to capture value user selects in dropdown:
+  const [selectedValue, setSelectedValue] = useState('');
+
+  const handleChange = (userSelection) => {
+    setSelectedValue(userSelection);
+  }
 
   // Bring in saved input from FormThree for user to edit:
   const currentUserFeedback = useSelector(store => {
@@ -19,12 +40,12 @@ function EditForm3() {
   // When Return to Review button clicked, 
   // save input and navigate to review page
   const handleReturnToReview = () => {
-    // Capture value selected by user in dropdown:
-    let selectedValue = document.getElementById("supported").value;
-
     // Verify selection is not blank:
     if (selectedValue === "") {
-      alert('Number must be selected!')
+      swal({
+        title: "Number must be selected!",
+        icon: "warning",
+      });
     } else {
       // When selection not blank, save it to current feedback:
       dispatch({
@@ -36,19 +57,50 @@ function EditForm3() {
   }
 
   return (
-    <div>
-      <h3>Edit your answer:</h3>
-      <h4>Your original answer was: {originalAnswer}</h4>
-      <label htmlFor="supported">How well are you being supported?</label>
-      <select name="supported" id="supported">
-        <option value=""></option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-      <button onClick={handleReturnToReview}>Return to Review</button>
+    <div className="card-wrapper">
+      <Typography variant="h5" component="h2"
+        gutterBottom>
+        Edit your answer:
+      </Typography>
+      <Typography>
+        <em>Your original answer was: {originalAnswer}</em>
+      </Typography>
+      <Box boxShadow={3}
+        className="card-container"
+      >
+        <Card variant="outlined">
+          <CardContent className="card-content">
+            <Typography variant="h5" component="h2">
+              How well are you being supported?
+          </Typography>
+            <FormControl>
+              <InputLabel id="type-select-label">
+              </InputLabel>
+              <Select labelId="type-select-label"
+                name="supported"
+                value={selectedValue}
+                id="supported"
+                onChange={(event) => handleChange(event.target.value)}
+              >
+                <MenuItem value=""><em>Choose One</em></MenuItem>
+                <MenuItem value="1">1</MenuItem>
+                <MenuItem value="2">2</MenuItem>
+                <MenuItem value="3">3</MenuItem>
+                <MenuItem value="4">4</MenuItem>
+                <MenuItem value="5">5</MenuItem>
+              </Select>
+            </FormControl>
+            <CardActions className="card-actions">
+              <Box m={3}>
+                <Button variant="contained" color="primary"
+                  onClick={handleReturnToReview}>
+                  Return to Review
+              </Button>
+              </Box>
+            </CardActions>
+          </CardContent>
+        </Card>
+      </Box>
     </div>
   )
 } // end EditForm3

@@ -1,11 +1,16 @@
 .form-completion-marker {
-border: 1px solid slategray;
+border: 1px solid #433520;
 width: 75%;
-margin: 1rem auto 4rem;
+max-hight: 2rem;
+margin: 1rem auto;
 }
 
 .form-green-bg {
-  background-color: green;
+  background-color: #00917c;
   width: 25%;
   height: 2rem;
 }
+
+/* td, th {
+  width: 25%,
+} */

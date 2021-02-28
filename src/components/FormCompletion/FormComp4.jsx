@@ -5,9 +5,12 @@ function FormCompFour() {
     <table className="form-completion-marker">
       <thead>
         <tr>
+          <th></th>
+          <th></th>
+          <th></th>
           <th>
-            3 of 4
-        </th>
+            4 of 4
+          </th>
         </tr>
       </thead>
       <tbody>

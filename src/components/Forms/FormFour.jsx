@@ -1,6 +1,17 @@
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
+import {
+  FormControl,
+  InputLabel,
+  Button,
+  Typography,
+  Box,
+  Card,
+  CardActions,
+  CardContent,
+  TextField
+} from '@material-ui/core';
 import FormCompFour from '../FormCompletion/FormComp4';
 
 // Component to display upon hitting NEXT in FormThree:
@@ -26,17 +37,39 @@ function FormFour() {
   } // end handleNext
 
   return (
-    <div>
-      {/* Show how many / 4 questions complete: */}
-      <FormCompFour />
-      <label>
-        Any comments you want to leave?
-        <input type="text" rows="3" value={commentInput}
-          onChange={(event) => {
-            setCommentInput(event.target.value)
-          }} />
-      </label>
-      <button onClick={handleNext}>REVIEW</button>
+    <div className="card-wrapper">
+      <Box boxShadow={3}
+        className="card-container"
+      >
+        <Card variant="outlined">
+          <CardContent className="card-content">
+            <Typography variant="h5" component="h2"
+              gutterBottom>
+              Any comments you want to leave?
+          </Typography>
+            <FormControl fullWidth>
+              <InputLabel id="type-select-label">
+              </InputLabel>
+              <TextField id="outlined-basic" rows={3}
+                label="Comments" variant="outlined"
+                value={commentInput}
+                onChange={(event) => {
+                  setCommentInput(event.target.value)
+                }} />
+            </FormControl>
+            <CardActions className="card-actions">
+              <Box m={3}>
+                <Button variant="contained" color="primary"
+                  onClick={handleNext}>
+                  REVIEW
+              </Button>
+              </Box>
+            </CardActions>
+            {/* Show how many / 4 questions complete: */}
+            <FormCompFour />
+          </CardContent>
+        </Card>
+      </Box>
     </div>
   )
 } // end FormFour
