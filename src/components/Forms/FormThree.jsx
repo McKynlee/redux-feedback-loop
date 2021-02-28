@@ -1,6 +1,7 @@
 import { useHistory } from 'react-router-dom';
 import FormCompThree from '../FormCompletion/FormComp3';
 import { useDispatch } from 'react-redux';
+import { Button, Box } from '@material-ui/core';
 
 // Component to display upon hitting NEXT in FormTwo:
 function FormThree() {
@@ -40,7 +41,12 @@ function FormThree() {
         <option value="4">4</option>
         <option value="5">5</option>
       </select>
-      <button onClick={handleNext}>NEXT</button>
+      <Box m={3}>
+        <Button variant="contained" color="primary"
+          onClick={handleNext}>
+          NEXT
+      </Button>
+      </Box>
     </div>
   )
 } // end FormThree

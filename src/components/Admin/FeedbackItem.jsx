@@ -1,5 +1,6 @@
 import axios from "axios";
 import swal from 'sweetalert';
+import { Button } from '@material-ui/core';
 
 function FeedbackItem({ userFeedbackRow,
   fetchHistoricalFeedback }) {
@@ -19,11 +20,14 @@ function FeedbackItem({ userFeedbackRow,
   switch (flaggedStatus) {
     case false:
       renderingForFlaggedStatus =
-        <button onClick={() => handleFlagClick(userFeedbackRow.id)}>Flag</button>;
+        <Button variant="contained" color="default"
+          onClick={() => handleFlagClick(userFeedbackRow.id)}>Flag</Button>;
       break;
     case true:
       renderingForFlaggedStatus =
-        <button onClick={() => handleFlagClick(userFeedbackRow.id)}>unflag</button>;
+        <Button variant="contained" color="primary"
+          onClick={() => handleFlagClick(userFeedbackRow.id)}>
+          unflag</Button>;
       cssForFlaggedStatus = "admin-table admin-flagged";
       break;
   }
@@ -87,7 +91,8 @@ function FeedbackItem({ userFeedbackRow,
       <td className="admin-table">{userFeedbackRow.comments}</td>
       <td className="admin-table">{renderingForFlaggedStatus}</td>
       <td className="admin-table">
-        <button onClick={() => handleDelete(userFeedbackRow.id)}>DELETE</button>
+        <Button variant="contained" color="secondary"
+          onClick={() => handleDelete(userFeedbackRow.id)}>DELETE</Button>
       </td>
     </tr>
   )

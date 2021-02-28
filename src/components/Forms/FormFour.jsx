@@ -1,6 +1,7 @@
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
+import { TextField, Button, Box } from '@material-ui/core';
 import FormCompFour from '../FormCompletion/FormComp4';
 
 // Component to display upon hitting NEXT in FormThree:
@@ -31,12 +32,19 @@ function FormFour() {
       <FormCompFour />
       <label>
         Any comments you want to leave?
-        <input type="text" rows="3" value={commentInput}
+        <TextField id="outlined-basic" rows={3}
+          label="Comments" variant="outlined"
+          value={commentInput}
           onChange={(event) => {
             setCommentInput(event.target.value)
           }} />
       </label>
-      <button onClick={handleNext}>REVIEW</button>
+      <Box m={3}>
+        <Button variant="contained" color="primary"
+          onClick={handleNext}>
+          REVIEW
+      </Button>
+      </Box>
     </div>
   )
 } // end FormFour

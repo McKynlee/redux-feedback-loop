@@ -69,8 +69,10 @@
 
 ## Styling
 - Material UI (cards, snackbars, buttons, nav bar, icons, theme)
+-[] Validate selection Q 1-3
+-[] Make sure selection captured
 
 ## Heroku
 
 ## ReadME
--[] update README
+-[] update README - add screenshots

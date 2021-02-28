@@ -1,5 +1,6 @@
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { Button, Box } from '@material-ui/core';
 
 // Route to this page when user clicks to edit FormTwo answer from ReviewPage:
 // This page re-displays question 2 and sends new user answer to reducer
@@ -48,7 +49,12 @@ function EditForm2() {
         <option value="4">4</option>
         <option value="5">5</option>
       </select>
-      <button onClick={handleReturnToReview}>Return to Review</button>
+      <Box m={3}>
+        <Button variant="contained" color="primary"
+          onClick={handleReturnToReview}>
+          Return to Review
+      </Button>
+      </Box>
     </div>
   )
 } // end EditForm2

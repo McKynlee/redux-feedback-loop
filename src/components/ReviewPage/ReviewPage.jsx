@@ -1,6 +1,7 @@
 import { useHistory, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
+import { Button, Box } from '@material-ui/core';
 
 // Component to display upon hitting NEXT in FormFour:
 function ReviewPage() {
@@ -62,7 +63,12 @@ function ReviewPage() {
           </tr>
           <tr>
             <td>
-              <button onClick={submitToSuccess}>SUBMIT</button>
+              <Box m={3}>
+                <Button variant="contained" color="primary"
+                  onClick={submitToSuccess}>
+                  Submit Feedback
+              </Button>
+              </Box>
             </td>
           </tr>
         </tbody>
