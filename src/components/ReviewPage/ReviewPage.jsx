@@ -47,17 +47,17 @@ function ReviewPage() {
           </tr>
           <tr>
             <td>
-              <Link to="/form2">How you're understanding the material: {currentUserFeedback.understanding}</Link>
+              <Link to="/edit2">How you're understanding the material: {currentUserFeedback.understanding}</Link>
             </td>
           </tr>
           <tr>
             <td>
-              <Link to="/form3">How well you feel supported: {currentUserFeedback.support}</Link>
+              <Link to="/edit3">How well you feel supported: {currentUserFeedback.support}</Link>
             </td>
           </tr>
           <tr>
             <td>
-              <Link to="/form4">Additional comments: {currentUserFeedback.comments}</Link>
+              <Link to="/edit4">Additional comments: {currentUserFeedback.comments}</Link>
             </td>
           </tr>
           <tr>

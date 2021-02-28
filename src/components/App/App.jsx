@@ -11,6 +11,9 @@ import ReviewPage from '../ReviewPage/ReviewPage';
 import SubmissionSuccess from '../SubmissionSuccess/SubmissionSuccess';
 import Admin from '../Admin/Admin';
 import EditForm1 from '../EditForms/EditForm1';
+import EditForm2 from '../EditForms/EditForm2';
+import EditForm3 from '../EditForms/EditForm3';
+import EditForm4 from '../EditForms/EditForm4';
 
 function App() {
 
@@ -44,6 +47,15 @@ function App() {
         </Route>
         <Route exact path="/edit1">
           <EditForm1 />
+        </Route>
+        <Route exact path="/edit2">
+          <EditForm2 />
+        </Route>
+        <Route exact path="/edit3">
+          <EditForm3 />
+        </Route>
+        <Route exact path="/edit4">
+          <EditForm4 />
         </Route>
       </Router>
     </div>

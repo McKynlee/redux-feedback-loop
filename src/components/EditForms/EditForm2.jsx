@@ -1,49 +1,47 @@
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
-// Route to this page when user clicks to edit answer to FormOne from ReviewPage:
-// This page re-displays question 1 and sends new user answer to redux
-// Differences from original FormOne: no completion bar rather original answer displayed,
+// Route to this page when user clicks to edit FormTwo answer from ReviewPage:
+// This page re-displays question 2 and sends new user answer to reducer
+// Differences from original FormTwo: no completion bar rather original answer displayed,
 // and NEXT button is replaced by Return to Review button
-function EditForm1() {
+function EditForm2() {
   const history = useHistory();
   const dispatch = useDispatch();
 
-  // Bring in saved input from FormOne for user to edit:
+  // Bring in saved input from FormTwo for user to edit:
   const currentUserFeedback = useSelector(store => {
     return store.currentFeedbackReducer;
   })
 
-  let originalAnswer = currentUserFeedback.feeling;
+  let originalAnswer = currentUserFeedback.understanding;
 
   // When Return to Review button clicked, 
-  // save input and navigate back to review page
+  // save input and navigate to review page
   const handleReturnToReview = () => {
     // Capture value selected by user in dropdown:
-    let selectedValue = document.getElementById("feeling").value;
+    let selectedValue = document.getElementById("content").value;
 
-    // Verify selection is not blank:
+    // Verify selection is not blank and capture selected value:
     if (selectedValue === "") {
       alert('Number must be selected!')
     } else {
       // When selection not blank, save it to currentFeedbackReducer
       dispatch({
-        type: 'SET_FEELING_FEEDBACK',
+        type: 'SET_UNDERSTANDING_FEEDBACK',
         payload: selectedValue,
       })
       history.push('/review');
     }
   } // end handleNext
 
-  console.log('currentUserFeedback:', currentUserFeedback);
-
   return (
     <div>
       <h3>Edit your answer:</h3>
       <h4>Your original answer was: {originalAnswer}</h4>
-      <label htmlFor="feeling">How are you feeling today?</label>
-      <select name="feeling" id="feeling" required>
-        <option value="">Choose One</option>
+      <label htmlFor="content">How well are you understanding the content?</label>
+      <select name="content" id="content">
+        <option value=""></option>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -53,6 +51,6 @@ function EditForm1() {
       <button onClick={handleReturnToReview}>Return to Review</button>
     </div>
   )
-} // end EditForm1
+} // end EditForm2
 
-export default EditForm1;
+export default EditForm2;
