@@ -57,9 +57,6 @@
 -[x] user can click on data from Review page and edit back in that form page
 -[x] still require number values
 
-## Styling
-- Material UI (cards, snackbars, buttons, nav bar, icons, theme)
-
 ## Admin Page
 -[x] Display all historical feedback (GET route written) 
 -[x] Dispatch data from GET to set Historical feedback reducer
@@ -69,5 +66,8 @@
 -[x] Ability to flag a feedback entry for review:
 -[x] build out handleFlagClick to update db and re-render page
 -[x] write TRUE/FALSE case conditional rendering
+
+## Styling
+- Material UI (cards, snackbars, buttons, nav bar, icons, theme)
 
 ## Heroku
