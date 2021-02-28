@@ -1,4 +1,4 @@
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 
@@ -37,14 +37,36 @@ function ReviewPage() {
   return (
     <div>
       <h2>Review Your Answers:</h2>
-      {/* // Display data captured from user's input: */}
-      <section className="review-feedback" >
-        <p>How you're feeling: {currentUserFeedback.feeling}</p>
-        <p>How you're understanding the material: {currentUserFeedback.understanding}</p>
-        <p>How well you feel supported: {currentUserFeedback.support}</p>
-        <p>Additional comments: {currentUserFeedback.comments}</p>
-        <button onClick={submitToSuccess}>SUBMIT</button>
-      </section>
+      {/* // Display data captured from user's input for review: */}
+      <table className="review-feedback" >
+        <tbody>
+          <tr>
+            <td>
+              <Link to="/edit1">How you're feeling: {currentUserFeedback.feeling}</Link>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <Link to="/edit2">How you're understanding the material: {currentUserFeedback.understanding}</Link>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <Link to="/edit3">How well you feel supported: {currentUserFeedback.support}</Link>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <Link to="/edit4">Additional comments: {currentUserFeedback.comments}</Link>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button onClick={submitToSuccess}>SUBMIT</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   )
 } // end ReviewPage
