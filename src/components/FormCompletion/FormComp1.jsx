@@ -5,11 +5,8 @@ function FormCompOne() {
     <table className="form-completion-marker">
       <thead>
         <tr>
-          <th>
-          </th>
-          <th>
-            1 of 4
-      </th>
+          <th></th>
+          <th>1 of 4</th>
           <th></th>
           <th></th>
         </tr>

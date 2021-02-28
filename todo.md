@@ -69,8 +69,10 @@
 
 ## Styling
 - Material UI (cards, snackbars, buttons, nav bar, icons, theme)
--[] Validate selection Q 1-3
--[] Make sure selection captured
+-[x] Validate selection Q 1-3
+-[x] Make sure selection captured
+-[] Card styling on forms 1-4 and edit forms 1-4
+-[] Delete icons on admin page
 
 ## Heroku
 
