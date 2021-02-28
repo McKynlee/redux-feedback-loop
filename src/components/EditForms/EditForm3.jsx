@@ -2,6 +2,7 @@ import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button, Box } from '@material-ui/core';
 import { useState } from 'react';
+import swal from 'sweetalert';
 
 // Route to this page when user clicks to edit FormThree answer from ReviewPage:
 // This page re-displays question 3 and sends new user answer to reducer
@@ -30,7 +31,10 @@ function EditForm3() {
   const handleReturnToReview = () => {
     // Verify selection is not blank:
     if (selectedValue === "") {
-      alert('Number must be selected!')
+      swal({
+        title: "Number must be selected!",
+        icon: "warning",
+      });
     } else {
       // When selection not blank, save it to current feedback:
       dispatch({

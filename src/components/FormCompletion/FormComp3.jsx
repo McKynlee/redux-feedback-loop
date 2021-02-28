@@ -7,10 +7,8 @@ function FormCompThree() {
         <tr>
           <th>
           </th>
-          <th>
-            3 of 4
-    </th>
           <th></th>
+          <th>3 of 4</th>
           <th></th>
         </tr>
       </thead>
