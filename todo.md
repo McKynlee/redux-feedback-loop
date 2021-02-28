@@ -54,7 +54,7 @@
 # STRETCH GOALS:
 
 ## Updates from Review Page
-- user can click on data and edit
+- user can click on data from Review page and edit back in that form page
 - still require number values
 
 ## Styling

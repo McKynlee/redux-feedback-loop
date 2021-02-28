@@ -21,7 +21,7 @@ let templateInput = {
 }
 // Capture current inputs each time user clicks the next page.
 // This will be added to feedbackHistoryReducer upon overall submit
-const currentFeedbackReducer = (state = templateInput, action) => {
+const currentFeedbackReducer = (state = {}, action) => {
   // This variable represents number inputs from Questions 1-3:
   let currentFeedbackInput = Number(action.payload);
 

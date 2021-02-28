@@ -1,6 +1,5 @@
 import React from 'react';
-import axios from 'axios';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 
 // Custom components:
@@ -11,6 +10,7 @@ import FormFour from '../Forms/FormFour';
 import ReviewPage from '../ReviewPage/ReviewPage';
 import SubmissionSuccess from '../SubmissionSuccess/SubmissionSuccess';
 import Admin from '../Admin/Admin';
+import EditForm1 from '../EditForms/EditForm1';
 
 function App() {
 
@@ -41,6 +41,9 @@ function App() {
         </Route>
         <Route exact path="/admin">
           <Admin />
+        </Route>
+        <Route exact path="/edit1">
+          <EditForm1 />
         </Route>
       </Router>
     </div>
