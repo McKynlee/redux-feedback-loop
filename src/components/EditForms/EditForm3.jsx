@@ -1,6 +1,17 @@
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { Button, Box } from '@material-ui/core';
+import {
+  Select,
+  FormControl,
+  MenuItem,
+  InputLabel,
+  Button,
+  Typography,
+  Box,
+  Card,
+  CardActions,
+  CardContent,
+} from '@material-ui/core';
 import { useState } from 'react';
 import swal from 'sweetalert';
 
@@ -46,25 +57,49 @@ function EditForm3() {
   }
 
   return (
-    <div>
-      <h3>Edit your answer:</h3>
-      <h4>Your original answer was: {originalAnswer}</h4>
-      <label htmlFor="supported">How well are you being supported?</label>
-      <select name="supported" id="supported"
-        onChange={(event) => handleChange(event.target.value)}
+    <div className="card-wrapper">
+      <Typography variant="h5" component="h2"
+        gutterBottom>
+        Edit your answer:
+      </Typography>
+      <Typography>
+        <em>Your original answer was: {originalAnswer}</em>
+      </Typography>
+      <Box boxShadow={3}
+        className="card-container"
       >
-        <option value=""></option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-      <Box m={3}>
-        <Button variant="contained" color="primary"
-          onClick={handleReturnToReview}>
-          Return to Review
-      </Button>
+        <Card variant="outlined">
+          <CardContent className="card-content">
+            <Typography variant="h5" component="h2">
+              How well are you being supported?
+          </Typography>
+            <FormControl>
+              <InputLabel id="type-select-label">
+              </InputLabel>
+              <Select labelId="type-select-label"
+                name="supported"
+                value={selectedValue}
+                id="supported"
+                onChange={(event) => handleChange(event.target.value)}
+              >
+                <MenuItem value=""><em>Choose One</em></MenuItem>
+                <MenuItem value="1">1</MenuItem>
+                <MenuItem value="2">2</MenuItem>
+                <MenuItem value="3">3</MenuItem>
+                <MenuItem value="4">4</MenuItem>
+                <MenuItem value="5">5</MenuItem>
+              </Select>
+            </FormControl>
+            <CardActions className="card-actions">
+              <Box m={3}>
+                <Button variant="contained" color="primary"
+                  onClick={handleReturnToReview}>
+                  Return to Review
+              </Button>
+              </Box>
+            </CardActions>
+          </CardContent>
+        </Card>
       </Box>
     </div>
   )
